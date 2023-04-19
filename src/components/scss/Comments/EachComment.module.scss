@@ -1,0 +1,95 @@
+@import "../../../scss/variables";
+
+.each-comment-area {
+    color: white;
+    display: flex;
+   
+    .logo-other-users {
+        width: 40px;
+        height: 40px;
+        margin-right: 16px;
+        img{
+            width: 100%;
+        }
+    }
+    .comment-script {
+        width: 845px;
+        display: flex;
+        flex-direction: column;
+        .channel-comment {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3px;
+            h4{
+                color: $textWhite;
+                font-size: 14px;
+                font-weight: 500;
+                margin-right: 5px;
+            }
+            span{
+                font-size: 14px;
+                color: $subText;
+                font-weight: 500;
+
+            }
+        }
+        .comment-content {
+            p {
+                font-size: 15px;
+            }
+        }
+        .reply-comment {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 5px;
+            .icon-reply {
+                font-size: 24px;
+                
+            }
+            .like-reply {
+                display: flex;
+                align-items: center;
+                button {
+                    padding: 4px;
+                    &:hover{
+                        background-color: #3F3F3F;
+                        border-radius: 50%;
+                        
+                    }
+                }
+                span{
+                    font-size: 14px;
+                    color: $subText;
+                    margin-left: 1px;
+
+                }
+            }
+            .dislike-reply {
+                margin: 0 15px;
+                button {
+                    padding: 4px;
+                    &:hover{
+                        background-color: #3F3F3F;
+                        border-radius: 50%;
+                        
+                    }
+                }
+            }
+            .reply {
+                button {
+                    font-size: 13px;
+                    font-weight: 500;
+                    padding: 6px 8px;
+                    &:hover{
+                        background-color: #3F3F3F;
+                        border-radius: 20px;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,8 @@
+@import "../../scss/variables";
+
+.home{
+    display: flex;
+    flex-direction: row;
+    background-color: $mainBgColor;
+    position: relative;
+}

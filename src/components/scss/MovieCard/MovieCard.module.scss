@@ -1,0 +1,186 @@
+@import "../.././../scss/variables";
+
+.movie-card {
+    display: block;
+    width: 340px;
+    margin: 0 8px 40px 8px;
+
+    @media (max-width: $breakpoint-desktop) {
+        width: 296px;
+    }
+
+    @media (max-width: $breakpoint-sDesktop) {
+        width: 248px;
+        margin: 0 4px 38px 4px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        width: 210px;
+        margin: 0 8px 38px 8px;
+    }
+
+    @media (max-width: $breakpoint-horPhone) {
+        width: 240px;
+        margin: 0 4px 38px 4px;
+    }
+
+
+    @media (max-width: $breakpoint-smPhone) {
+        width: 100vw;
+        margin: 0 0 40px 0;
+    }
+    .thumbnail {
+        width: 338px;
+        height: 190px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+
+        @media (max-width: $breakpoint-desktop) {
+            width: 290px;
+            height: 164px;
+        }
+
+        @media (max-width: $breakpoint-sDesktop) {
+            width: 238px;
+            height: 140px;
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+            width: 210px;
+            height: 126px;
+        }
+        
+        @media (max-width: $breakpoint-tablet) {
+            width: 210px;
+            height: 126px;
+        }
+
+        @media (max-width: $breakpoint-horPhone) {
+            width: 234px;
+            height: 138px;
+        }
+
+        @media (max-width: $breakpoint-smPhone) {
+            width: 100vw;
+            height: 235px;
+        }
+        .thumbnail-img {
+            width: 100%;
+        }
+        .movie-range {
+            position: absolute;
+            color: white;
+            bottom: 0;
+            right: 0;
+            margin: 4px;
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row;
+            height: 17px;
+            padding: 0 4px;
+            background-color: #000000cc;
+            border-radius: 5px;
+            @media (max-width: $breakpoint-desktop) {
+                height: 20px;
+                padding: 0 5px;
+            }
+            .movie-text {
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+    }
+    .body {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        width: 100%;
+        font-family: "Roboto", "Arial", sans-serif;
+        &:hover {
+            .movie-menu {
+                opacity: 1;
+            }
+        }
+        .logo-channel {
+            .logo-cover {
+                margin: 12px 12px 0 0;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                overflow: hidden;
+                @media (max-width: $breakpoint-tablet) {
+                    width: 24px;
+                height: 24px;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        .movie-content {
+            color: $textWhite;
+            padding-right: 30px;
+            .movie-title {
+                margin-top: 12px;
+                margin-bottom: 4px;
+                color: $textWhite;
+
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 600;
+                overflow: hidden;
+                display: block;
+                max-height: 4.4rem;
+                -webkit-line-clamp: 2;
+               
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                white-space: normal;
+                @media (max-width: $breakpoint-desktop) {
+                    font-size: 15px;
+                }
+                @media (max-width: $breakpoint-sDesktop) {
+                    font-size: 14px;
+                }
+                @media (max-width: $breakpoint-tablet) {
+                    font-size: 12px;
+                }
+                @media (max-width: $breakpoint-horPhone) {
+                    font-size: 14px;
+                }
+            }
+            .movie-info {
+                color: $subText;
+                font-size: 14px;
+                font-weight: 500;
+                @media (max-width: $breakpoint-desktop) {
+                    font-size: 13px;
+                }
+                @media (max-width: $breakpoint-tablet) {
+                    font-size: 10px;
+                }
+                @media (max-width: $breakpoint-horPhone) {
+                    font-size: 12px;
+                }
+                .channel-name {
+                }
+                .movie-views-time {
+                }
+            }
+        }
+        .movie-menu {
+            position: absolute;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            .movie-options {
+                width: 25px;
+                height: 50px;
+            }
+        }
+    }
+}

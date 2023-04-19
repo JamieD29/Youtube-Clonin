@@ -1,0 +1,242 @@
+@import "../../../scss/variables";
+
+
+
+.nav-cover {
+    background-color: $mainBgColor;
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+    @media (max-width: $breakpoint-smPhone) {
+        width: 100%;
+        padding: 0;
+    }
+    .nav-start {
+        display: flex;
+        flex-direction: row;
+        width: 169px;
+        align-items: center;
+        @media (max-width: 890px) {
+            width: 159px;
+        }
+
+        @media (max-width: 680px) {
+            width: 120px;
+        }
+
+        @media (max-width: $breakpoint-horPhone) {
+            width: 150px;
+        }
+
+        @media (max-width: $breakpoint-smPhone) {
+            width: 140px;
+        }
+        .nav-hamburger {
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.5s;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            @media (max-width: $breakpoint-smPhone) {
+                font-size: 22px;
+                padding: 1px;
+            }
+        }
+        .nav-logo-cover {
+            height: 40px;
+            width: 120px;
+
+            @media (max-width: $breakpoint-horPhone) {
+                height: 40px;
+                width: 120px;
+            }
+
+            @media (max-width: $breakpoint-smPhone) {
+                height: 40px;
+                width: 120px;
+            }
+            .nav-logo {
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .nav-center {
+        display: flex;
+        flex-direction: row;
+        .nav-search {
+            display: flex;
+            align-items: center;
+            .nav-input {
+                background-color: #121212;
+                padding: 0 4px 0 16px;
+                border-top-left-radius: 24px;
+                border-bottom-left-radius: 24px;
+                height: 40px;
+                width: 540px;
+                display: flex;
+                align-items: center;
+                border: 1px solid hsl(0, 0%, 18.82%);
+                
+
+                @media (max-width: $breakpoint-sDesktop) {
+                    width: 280px;
+                    height: 35px;
+                }
+
+                @media (max-width: 890px) {
+                    width: 280px;
+                    height: 35px;
+                }
+
+                @media (max-width: $breakpoint-tablet) {
+                    width: 240px;
+                    height: 35px;
+                }
+
+                @media (max-width: $breakpoint-horPhone) {
+                    display: none;
+                }
+
+                @media (max-width: $breakpoint-smPhone) {
+                    display: none;
+                }
+                input {
+                    background-color: transparent;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    margin-left: 4px;
+                    max-width: 100%;
+                    outline: none;
+                    text-align: inherit;
+                    width: 100%;
+                    color: white;
+                }
+            }
+            .nav-btn-search {
+                background-color: #222222;
+                color: white;
+                border-radius: 0 40px 40px 0;
+                cursor: pointer;
+                height: 40px;
+                width: 64px;
+                border: 1px solid hsl(0, 0%, 18.82%);
+                padding: 2px 20px;
+                font-size: 20px;
+                @media (max-width: 890px) {
+                    height: 35px;
+                }
+
+
+                @media (max-width:  $breakpoint-horPhone) {
+                    padding: 7px;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    font-size: 15px;
+                    margin-left: 9rem;
+                 
+                }
+                @media (max-width: $breakpoint-smPhone) {
+                    margin-left: 5rem;
+                }
+            }
+        }
+
+        .nav-voice-input {
+            margin-left: 8px;
+            color: white;
+            font-size: 22px;
+            width: 40px;
+            height: 40px;
+            padding: 9px;
+            text-align: center;
+            border-radius: 50%;
+            // border: 1px solid hsl(0, 0%, 18.82%);
+            background-color: #181818;
+            transition: all 0.1s;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+            @media (max-width: 890px) {
+                padding: 7px;
+                width: 35px;
+                height: 35px;
+            }
+            @media (max-width: $breakpoint-horPhone) {
+                display: none;
+            }
+        }
+    }
+    .nav-end {
+        display: flex;
+        flex-direction: row;
+        width: 225px;
+        justify-content: flex-end;
+        align-items: center;
+
+        @media (max-width: $breakpoint-desktop) {
+            width: fit-content;
+        }
+
+        @media (max-width: $breakpoint-smPhone) {
+            width: fit-content;
+            margin-right: 5px;
+        }
+        .nav-option {
+            width: 80px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent ;
+            margin-right: 6px;
+        }
+        .nav-sign-in {
+            color: #3b9df1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 26px;
+            border: 1px solid hsl(0, 0%, 18.82%);
+            border-radius: 24px;
+            width: 100px;
+            height: 34px;
+            padding: 0 10px;
+            @media (max-width: $breakpoint-smPhone) {
+                width: 70px;
+                height: 28px;
+                padding: 0px 5px;
+                font-size: 16px;
+            }
+            .nav-sign-icon {
+               
+            }
+            .nav-signin-text {
+                margin-left: 6px;
+                font-size: 14px !important;
+
+                font-weight: 500;
+                @media (max-width: $breakpoint-smPhone) {
+                   
+                    font-size: 10px !important;
+                 }
+            }
+
+        }
+    }
+}

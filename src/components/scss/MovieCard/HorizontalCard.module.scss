@@ -1,0 +1,88 @@
+@import "../../../scss/variables";
+
+.suggest-card{
+    display: flex;
+    color: $subText;
+    margin-top: 8px;
+    .suggest-thumbnail{
+        width: 168px;
+        height: 94px;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        @media screen and (max-width: 768px) {
+            width: 40%;
+        }
+        img{
+            width: 100%;
+        }
+        .suggest-range{
+            position: absolute;
+            color: white;
+            bottom: 0;
+            right: 0;
+            margin: 4px;
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row;
+            height: 17px;
+            padding: 0 4px;
+            background-color: #000000cc;
+            border-radius: 5px;
+            .range-text{
+                font-size: 12px;
+                font-weight: 500;
+                
+            }
+        }
+    }
+    .suggest-body{
+        padding: 0 5px;
+        width: 226px;
+        @media screen and (max-width: 768px) {
+            width: 50%;
+        }
+        .suggest-info{
+            color: $textWhite;
+            .suggest-title{
+                margin-bottom: 4px;
+                color: $textWhite;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 600;
+                overflow: hidden;
+                display: block;
+                max-height: 4.4rem;
+                -webkit-line-clamp: 2;
+
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                white-space: normal;
+            }
+            .s-video-info{
+                color: $subText;
+                font-size: 12px;
+                font-weight: 500;
+                .s-channel-name{
+                }
+                .s-views-time{
+                }
+            }
+        }
+    }
+
+    .suggest-menu{
+        padding: 0 2px;
+        .menu-icon{
+            width: 25px;
+            height: 30px;
+            opacity: 0;
+        }
+        &:hover{
+            .menu-icon{
+                opacity: 1;
+            }
+        }
+    }
+}

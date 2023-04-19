@@ -1,0 +1,50 @@
+@import "../../../scss/variables";
+
+.comments{
+    .comments-filter-n-action{
+        margin: 24px 0 32px 0 ;
+        color: white;
+        .comments-filter{
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+            :first-child{
+                font-size: 16px;
+                font-weight: 500;
+            }
+            :last-child{
+                display: flex;
+                align-items: center;
+                margin-left: 20px;
+                font-size: 16px;
+                .filter-icon{
+                    font-size: 32px !important;
+                    margin-right: 6px;
+                }
+            }
+        }
+        .comments-action{
+            .cover-action{
+                display: flex;
+                .logo-user{
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 16px;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .input-action{
+                    width: 100%;
+                    input{
+                        width: 100%;
+                        background-color: $mainBgColor;
+                        border-bottom: 1px solid rgba(128, 128, 128, 0.605) ;
+                        
+                    }
+                }
+            }
+
+        }
+    }
+}

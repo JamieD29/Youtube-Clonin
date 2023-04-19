@@ -1,0 +1,251 @@
+@import "../../scss//variables";
+
+.watching-page {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 86px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: $mainBgColor;
+
+    .film-details {
+        padding: 24px 24px 0 0;
+        width: 64%;
+        @media screen and (max-width: 1024px) {
+            padding: 24px 24px 0 12px;
+            width: 65%;
+        }
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            padding: 24px 5px 0 5px;
+        }
+        @media screen and (max-width: 640px) {
+            padding: 0 5px;
+        }
+        .film-playing {
+            width: 100%;
+            height: 530px;
+            border-radius: 1px;
+            overflow: hidden;
+            @media screen and (max-width: 1024px) {
+                height: 400px;
+            }
+            @media screen and (max-width: 768px) {
+                height: 380px;
+            }
+            @media screen and (max-width: 640px) {
+                height: 280px;
+            }
+        }
+        .film-title {
+            h2 {
+                word-break: break-word;
+                font-size: 20px;
+                line-height: 2.8rem;
+                font-weight: 600;
+                overflow: hidden;
+                display: block;
+                max-height: 5.6rem;
+
+                text-overflow: ellipsis;
+                white-space: normal;
+                color: $textWhite;
+                @media screen and (max-width: 1024px) {
+                    font-size: 18px;
+                }
+                @media screen and (max-width: 768px) {
+                    font-size: 16px;
+                }
+                @media screen and (max-width: 640px) {
+                    font-size: 16px;
+                }
+            }
+        }
+        .details-middle {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+
+            .details-left {
+                width: 50%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+                .channel {
+                    display: flex;
+                    .logo-channel {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .channel-info {
+                        margin-left: 10px;
+                        .channel-name {
+                            color: $textWhite;
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+                        .channel-subscribers {
+                            color: $subText;
+                            font-size: 12px;
+                            span {
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                }
+
+                .sub-btn {
+                    margin-left: 20px;
+                    button {
+                        background-color: white;
+                        padding: 8px 15px;
+                        border-radius: 22px;
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .details-right {
+                width: 50%;
+                color: $textWhite;
+                display: flex;
+                flex-direction: row;
+
+                align-items: center;
+                justify-content: flex-end;
+
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                    justify-content: flex-start;
+                    margin-top: 10px;
+                }
+
+                .like-dislike {
+                    display: flex;
+                    align-items: center;
+                    background-color: #222222;
+                    border-radius: 20px;
+                    padding: 8px 0;
+                    margin-right: 10px;
+                    .like-btn {
+                        display: flex;
+                        font-size: 22px;
+                        padding: 0px 20px 0px 10px;
+                        border-right: 1px solid $subText;
+                        span {
+                            margin-left: 10px;
+                            font-size: 14px;
+                            font-weight: 500;
+                        }
+                    }
+                    .dislike-btn {
+                        font-size: 22px;
+                        padding: 0px 18px 0px 10px;
+                    }
+                }
+                .share-btn button {
+                    padding: 8px 10px;
+                    margin-right: 10px;
+                    .share-icon {
+                        -webkit-transform: scaleX(-1);
+                        transform: scaleX(-1);
+                    }
+                    border-radius: 20px;
+                    background-color: #222222;
+                    display: flex;
+                    align-items: center;
+                    font-size: 22px;
+                    span {
+                        font-size: 14px;
+                        font-weight: 500;
+                        margin-left: 5px;
+                    }
+                }
+                .cut-btn button {
+                    border-radius: 20px;
+                    background-color: #222222;
+                    display: flex;
+                    align-items: center;
+                    font-size: 22px;
+                    padding: 8px 10px;
+                    margin-right: 10px;
+                    span {
+                        font-size: 14px;
+                        font-weight: 500;
+                        margin-left: 5px;
+                    }
+                }
+                .option-btn button {
+                    padding: 8px 10px;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 50%;
+                    background-color: #222222;
+                    font-size: 22px;
+                }
+            }
+        }
+        .film-description {
+            padding: 10px 8px;
+            margin-top: 15px;
+            background-color: #282828;
+            border-radius: 10px;
+            .sum-description {
+                color: $textWhite;
+                font-weight: 500;
+                font-size: 14px;
+                // .views{
+
+                // }
+                // .published{
+
+                // }
+                .hashtag {
+                    font-weight: 400;
+                    margin-left: 2px;
+                    color: $subText;
+                }
+            }
+            .description-area {
+                color: #ffffff;
+            }
+            .show-more {
+                color: $textWhite;
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+    .suggest-video {
+        width: 426px;
+        padding: 24px 24px 0 0;
+
+        @media screen and (max-width: 1280px) {
+            width: 385px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            padding: 24px 10px 0 0;
+            width: 35%;
+        }
+        @media screen and (max-width: 768px) {
+            padding: 0 5px 0 5px;
+            margin-top: 30px;
+            width: 100%;
+        }
+        .suggested-videos {
+            margin-top: 16px;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@import '../../../scss/variables';
+
+.genres{
+    position: fixed;
+    top: 54px;
+    left: 85px;
+    z-index: 4;
+    width: 100%;
+    background-color: $mainBgColor;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @media (max-width: $breakpoint-horPhone) {
+        left: 22px;
+}
+    
+    @media (max-width: $breakpoint-smPhone) {
+            left: 0px;
+    }
+
+    .genre{
+    width: fit-content !important;
+    margin: 0 10px 0 0 !important;
+   }
+}
+
+.genres-btn{
+    background-color: #272727;
+    color: white;
+    font-family: 'Roboto', sans-serif; 
+    border-radius: 10px; 
+    font-size: 14px;
+    padding: 6px 10px;
+    width: max-content;
+    
+}
