@@ -3,35 +3,34 @@ import cardStyle from "./scss/MovieCard/MovieCard.module.scss";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-// const MovieCard = ({data}) => {
- 
-  
-// };
-
 
 const MovieCard = React.forwardRef(({data}, ref) =>{
 
   const {t} = useTranslation();
 
-  
 
   const movieCard = (
-    <NavLink className={`${cardStyle["movie-card"]}`} to={`/watch/${data.snippet.resourceId.videoId}`}
+    <NavLink className={`${cardStyle["movie-card"]}`} 
+    //to={`/watch/${data.snippet.resourceId.videoId}`}
    
     >
       <div className={`${cardStyle["thumbnail"]}`}>
         <img
           className={`${cardStyle["thumbnail-img"]}`}
-          src={data.snippet.thumbnails.standard.url} alt="Video thumbnail"
+          // src={data.snippet.thumbnails.standard.url}
+           alt="Video thumbnail"
         />
         <div className={`${cardStyle["movie-range"]}`}>
           <span className={`${cardStyle["movie-text"]}`}>5:34</span>
         </div>
       </div>
       <div className={`${cardStyle["body"]}`}>
-        <div className={`${cardStyle["logo-channel"]}`} key={data.snippet.videoOwnerChannelId}>
+        <div className={`${cardStyle["logo-channel"]}`} 
+        key={data.snippet.videoOwnerChannelId}>
           <div className={`${cardStyle["logo-cover"]}`}>
-            <img src={data.snippet.thumbnails.standard.url} alt="Video thumbnail" />
+            <img 
+            //src={data.snippet.thumbnails.standard.url}
+             alt="Video thumbnail" />
           </div>
         </div>
         <div className={`${cardStyle["movie-content"]}`}>
@@ -39,7 +38,9 @@ const MovieCard = React.forwardRef(({data}, ref) =>{
             {data.snippet.title}
           </div>
           <div className={`${cardStyle["movie-info"]}`}>
-            <h2 className={`${cardStyle["channel-name"]}`}> {data.snippet.videoOwnerChannelTitle} </h2>
+            <h2 className={`${cardStyle["channel-name"]}`}> 
+            {/* {data.snippet.videoOwnerChannelTitle}  */}
+            </h2>
             <div className={`${cardStyle["movie-views-time"]}`}>
               <span>20K {t('views')}</span>
               <span style={{margin:"0 4px"}}>•</span>

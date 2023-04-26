@@ -4,6 +4,7 @@ import MovieList from '../components/MovieList'
 
 import {  } from '../app/store/Actions/movieAction'
 
+
 const Home = () => {
 
   // useEffect(()=>{

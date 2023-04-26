@@ -15,13 +15,13 @@ const useMovies = (pageNum = 1) => {
         setIsError(false)
         setError({})
         axios({
-            method: "GET",
-            url: "https://youtube-v31.p.rapidapi.com/playlistItems",
-            params: { playlistId: "RDZiQo7nAkQHU", part: "snippet", maxResults: "25" },
-            headers: {
-              "X-RapidAPI-Key": keyAuthorization,
-              "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
-            },
+          method: 'GET',
+          url: 'https://youtube-v31.p.rapidapi.com/playlistItems',
+          params: {playlistId: 'RDZiQo7nAkQHU', part: 'snippet', maxResults: '50'},
+          headers: {
+            'X-RapidAPI-Key': keyAuthorization,
+            'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
+          }
           })
             .then(async (res) => {
             

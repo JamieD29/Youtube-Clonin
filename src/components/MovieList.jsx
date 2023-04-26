@@ -1,8 +1,8 @@
 import React, { useState, useRef, useCallback } from "react";
 import MovieCard from "./MovieCard";
 import listStyle from "./scss/MovieList/MovieList.module.scss";
-
 import useMovies from "../utils/useMovies";
+import ListPage from "./ListPage";
 
 const MovieList = () => {
   //const movieList = useSelector(state=> state.movieReducer.movies);
@@ -13,7 +13,7 @@ const MovieList = () => {
   
   const intObserver = useRef();
   const lastPostRef = useCallback((movie) => {
-
+    console.log(movie);
     if(isLoading) return 
 
     if(intObserver.current) {
@@ -22,9 +22,8 @@ const MovieList = () => {
 
     };
 
-
     intObserver.current = new IntersectionObserver(results=>{
-      console.log(results[0]);
+      console.log(results);
       if(results[0].isIntersecting && hasNextPage){
         console.log('Near the end !!');
         setPageNum(prev => prev + 1);
@@ -34,6 +33,29 @@ const MovieList = () => {
     if(movie) intObserver.current.observe(movie)
     
   },[isLoading, hasNextPage]);
+
+  const firstPostRef = useCallback((movie) => {
+    console.log(movie);
+    if(isLoading) return 
+
+    if(intObserver.current) {
+      
+      intObserver.current.disconnect();
+
+    };
+
+    intObserver.current = new IntersectionObserver(results=>{
+      console.log(results);
+      if(results[0].isIntersecting){
+        console.log('Near the top !!');
+        
+      }
+    })
+
+    if(movie) intObserver.current.observe(movie)
+    
+  },[]);
+
 
 
   const renderLoading = ()=>{
@@ -116,9 +138,11 @@ const MovieList = () => {
             tempArr = [...movies];
             return tempArr.map((movie, index) => {
 
-              if (tempArr.length === index +1) {
+              if (tempArr.length === index + 1) {
                 return <MovieCard ref={lastPostRef} key={movie.id} data={movie} />;
-              } else {
+              } else if(index === 0) {
+                return <MovieCard ref={firstPostRef} key={movie.id} data={movie} />;
+              }else{
                 return <MovieCard key={movie.id} data={movie} />;
               }
             });

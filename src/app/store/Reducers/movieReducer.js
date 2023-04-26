@@ -1,7 +1,8 @@
 import {produce } from "immer"; 
 const initialState = {
     movies: [],
-    
+    isLoading: false,
+    page: 0,
 }
 
 const reducer = (state = initialState, {type, payload}) => {
