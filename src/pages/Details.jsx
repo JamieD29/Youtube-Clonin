@@ -7,7 +7,6 @@ import {
   BiCut,
   BiDislike,
   BiDotsHorizontalRounded,
-
   BiLike,
   BiShare,
 } from "react-icons/bi";
@@ -20,9 +19,8 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies } from "../app/store/Actions/movieAction";
 
-
 const Details = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   const params = useParams();
 
@@ -32,11 +30,7 @@ const Details = () => {
 
   const [page, setPage] = useState(1);
 
-
   const [videos, setVideos] = useState([]);
-
-
-
 
   const formatNum = (num) => {
     let finalNum;
@@ -108,26 +102,24 @@ const Details = () => {
           "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
         },
       })
-        .then( ( res) => {
+        .then((res) => {
           setVideos(videos.concat(res.data));
-        
         })
         .catch((err) => console.log(err));
     };
 
     fetchApiVideos();
-    
-
   }, [page]);
 
   const fetchData = () => {
-  
-   return setPage(page + 1);
+    return setPage(page + 1);
+  };
 
-  }
+  useEffect(() => {
+    window.scroll(0,0);
+  }, []);
 
-
-console.log(page)
+  console.log(page);
 
   return (
     <div>
@@ -148,30 +140,30 @@ console.log(page)
           </div>
           <div className={`${detailStyle["details-middle"]}`}>
             <div className={`${detailStyle["details-left"]}`}>
-
-            <div className={`${detailStyle["channel"]}`}>
-              <div className={`${detailStyle["logo-channel"]}`}>
-                <img
-                  src={channelInfo?.items[0].snippet.thumbnails.high.url}
-                  // src="https://picsum.photos/300/300"
-                  alt=""
-                />
+              <div className={`${detailStyle["channel"]}`}>
+                <div className={`${detailStyle["logo-channel"]}`}>
+                  <img
+                    src={channelInfo?.items[0].snippet.thumbnails.high.url}
+                    // src="https://picsum.photos/300/300"
+                    alt=""
+                  />
+                </div>
+                <div className={`${detailStyle["channel-info"]}`}>
+                  <h3 className={`${detailStyle["channel-name"]}`}>
+                    {channelInfo?.items[0].snippet.title}
+                    {/* BLACKPINK */}
+                  </h3>
+                  <h5 className={`${detailStyle["channel-subscribers"]}`}>
+                    {formatNum(
+                      channelInfo?.items[0].statistics.subscriberCount
+                    )}
+                    <span>{t("subscribers")}</span>
+                  </h5>
+                </div>
               </div>
-              <div className={`${detailStyle["channel-info"]}`}>
-                <h3 className={`${detailStyle["channel-name"]}`}>
-                  {channelInfo?.items[0].snippet.title}
-                  {/* BLACKPINK */}
-                </h3>
-                <h5 className={`${detailStyle["channel-subscribers"]}`}>
-                  {formatNum(channelInfo?.items[0].statistics.subscriberCount)}
-                  <span>{t('subscribers')}</span>
-                </h5>
-              </div>
-            </div>
-              
 
               <div className={`${detailStyle["sub-btn"]}`}>
-                <button>{t('subscribe')}</button>
+                <button>{t("subscribe")}</button>
               </div>
             </div>
             <div className={`${detailStyle["details-right"]}`}>
@@ -191,14 +183,14 @@ console.log(page)
               <div className={`${detailStyle["share-btn"]}`}>
                 <button>
                   <BiShare className={`${detailStyle["share-icon"]}`}></BiShare>
-                  <span>{t('share')}</span>
+                  <span>{t("share")}</span>
                 </button>
               </div>
 
               <div className={`${detailStyle["cut-btn"]}`}>
                 <button>
                   <BiCut />
-                  <span>{t('clip')}</span>
+                  <span>{t("clip")}</span>
                 </button>
               </div>
 
@@ -212,10 +204,13 @@ console.log(page)
 
           <div className={`${detailStyle["film-description"]}`}>
             <div className={`${detailStyle["sum-description"]}`}>
-              <span className={`${detailStyle["views"]}`}> 1,5M {t('views')} </span>
+              <span className={`${detailStyle["views"]}`}>
+                {" "}
+                1,5M {t("views")}{" "}
+              </span>
               <span className={`${detailStyle["published"]}`}>
                 {" "}
-                1 {t('month')}{" "}
+                1 {t("month")}{" "}
               </span>
               <span className={`${detailStyle["hashtag"]}`}>
                 {" "}
@@ -227,7 +222,9 @@ console.log(page)
               Quisquam, corrupti. In quia doloremque magni earum at eligendi.
               Aut, eos veritatis.
             </div>
-            <span className={`${detailStyle["show-more"]}`}>{t('show more')}</span>
+            <span className={`${detailStyle["show-more"]}`}>
+              {t("show more")}
+            </span>
           </div>
 
           <Comments />
@@ -240,13 +237,16 @@ console.log(page)
               hasMore={true}
               inverse={true}
               next={fetchData}
-              loader={<h3 style={{ color: "white", textAlign:"center" }}>Loading...</h3>}
-
+              loader={
+                <h3 style={{ color: "white", textAlign: "center" }}>
+                  Loading...
+                </h3>
+              }
             >
               {videos.map((page) => {
                 return page.items.map((movie, index) => {
-                return <HorizontalCard data={movie.snippet} key={index} />;
-              })
+                  return <HorizontalCard data={movie.snippet} key={index} />;
+                });
               })}
             </InfiniteScroll>
 
@@ -260,11 +260,6 @@ console.log(page)
             <HorizontalCard/>;
             <HorizontalCard/>;
             <HorizontalCard/>; */}
-            
-
-
-
-
           </div>
         </div>
       </section>
